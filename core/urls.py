@@ -1,0 +1,22 @@
+from django.urls import path
+from core import views
+from django.contrib.auth import views as auth_views
+
+urlpatterns = [
+    path("", views.index, name="index"),
+    path("settings", views.settings, name="settings"),
+    path('signup', views.signup, name="signup"),
+    path('signin', views.signin, name="signin"),
+    path('logout', views.logout, name="logout"),
+    path('upload', views.upload, name='upload'),
+    path('like-post', views.like_post, name='like-post'),
+    path('profile/<str:pk>', views.profile, name='profile'),
+    path('follow', views.follow, name='follow'),
+    path('search',views.search,name='search'),
+    path('allVideos',views.allVideos,name='allVideos'),
+    path('test',views.test,name='test'),
+    path('mylogin',views.mylogin,name='mylogin'),
+    path('delete_post/<uuid:uuid>/', views.delete_post, name='delete_post'),
+
+
+]
